@@ -1,0 +1,37 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function palindrome(x){
+                var y=x;
+                var sum=0;
+                while(x>0){
+                    var rem=x%10;
+                    sum=sum*10+rem;
+                    x=parseInt(x/10);
+                }
+                // console.log( sum);
+                if(sum==y){
+                    console.log("it is palindrome");
+                }
+                else{
+                    console.log("it is not a palindrome");
+                }
+            }
+            palindrome(121);
+        </script>
+        <script>
+            function palin(x){
+                var y=x.toString();
+                var rev=y.split("").reverse().join("");
+                if(rev==x){
+                    console.log("it is palindrome")
+                }else{
+                    console.log("it is not a palindrome")
+                }
+            }
+            palin(121);
+            palin("amma")
+        </script>
+    </body>
+</html>

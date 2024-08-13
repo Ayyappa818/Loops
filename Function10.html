@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function armstrong(x){
+                var sum=0;
+                var temp=x;
+                var y=0;
+                while(x>0){
+                    var rem=x%10;
+                    y=Math.pow(rem,3)
+                    sum=sum+y;
+                    x=parseInt(x/10);
+                }
+                if(temp==sum){
+                    console.log("it is a armstrong number");
+                }else{
+                    console.log("it is not a armstrong number");
+                }
+            }
+            armstrong(153);
+        </script>
+    </body>
+</html>
