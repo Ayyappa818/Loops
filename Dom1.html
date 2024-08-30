@@ -1,0 +1,153 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var x = document.createElement('h1');
+            x.innerHTML="Hello DOM World!";
+            document.body.appendChild(x)
+        </script>
+        <script>
+            var y=document.createElement('h1');
+            y.innerHTML="Hello DOM World!";
+            y.style.color='gold'
+            document.body.appendChild(y);
+        </script>
+        <script>
+            var ar=['ramesh','suresh','praveen','gopi','sunil'];
+            ar.forEach(function abc(events){
+            var z=document.createElement('li');
+            z.innerHTML=events;
+            document.body.appendChild(z);
+            })
+        </script>
+        <script>
+            var ar=[11,12,13,14,15,16,17,18]
+            ar.forEach(function abc(s){
+            var a=document.createElement('li');
+            a.innerHTML=s;
+            document.body.appendChild(a);
+            })
+        </script>
+        <table border="2">
+            <thead>
+                <th>FIRSTNAME</th>
+                <th>LASTNAME</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+                <th>CITY</th>
+                <th>SALARY</th>
+            </thead>
+            <tbody id="as">
+            </tbody>
+        </table>
+        <script>
+              var people = [
+                            {
+                            "firstname": "praveen",
+                            "lastname": "gubbala",
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            "firstname": "srikanth",
+                            "lastname": "gubbala",
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            "firstname": "pradeep",
+                            "lastname": "reddy",
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 30000
+                            },
+                            {
+                            "firstname": "mounika",
+                            "lastname": "mudiraj",
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            "firstname": "nikhil",
+                            "lastname": "m",
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            "firstname": "riya",
+                            "lastname": "bhadouria",
+                            "age": 14,
+                            "gender": "female",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+                            people.forEach(function abc(event){
+                            var x=document.createElement('tr');
+                            var b=document.createElement('td');
+                            b.innerHTML=event.firstname;
+                            x.appendChild(b);
+
+                            var c=document.createElement('td');
+                            c.innerHTML=event.lastname;
+                            x.appendChild(c);
+
+                            var d=document.createElement('td');
+                            d.innerHTML=event.age;;
+                            x.appendChild(d);
+                            
+                            var e=document.createElement('td');
+                            e.innerHTML=event.gender;
+                            x.appendChild(e);
+
+                            var f=document.createElement("td");
+                            f.innerHTML=event.city;
+                            x.appendChild(f);
+
+                            var g=document.createElement('td');
+                            g.innerHTML=event.salary;
+                            x.appendChild(g)
+
+                            document.getElementById('as').appendChild(x)
+                            })
+
+</script>
+
+
+
+<style>
+    #d1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:20px;
+    }
+    #d1 img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+</style>
+<div id="d1"></div>
+<div class="i"></div>
+<script>
+    var ar=["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJZ7XQf4_1miq-ElTKKxAnZD_ugDw2RVSsA&s","https://www.themanthanschool.co.in/blog/wp-content/uploads/2020/08/nature.jpg","https://hips.hearstapps.com/hmg-prod/images/pfeiffer-beach-sunset-big-sur-ca-royalty-free-image-1590086887.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=640:*"]
+    var x=document.getElementById('d1');
+    x.innerHTML=" ";
+    ar.forEach(function abc(i){
+        var y=document.createElement('img');
+        y.src=i;
+        x.appendChild(y)
+    })
+</script>
+    </body>
+</html>
