@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <button id="b1" onclick="abc()" style="width: 100px;height: 100px;">on</button>
+        <script>
+            var x=document.getElementById("b1");
+            var ar=["on","off"];
+            var a=0;
+
+            function abc(){
+                if(a==ar.length-1){
+                a=0;
+                x.innerHTML=ar[a];
+            }else{
+                a=a+1;
+                x.innerHTML=ar[a];
+            }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head></head>
+    <body>
+        <div id="d1" style="width: 300px;height: 100px;border: 2px solid;">I'm Nothing</div>
+        <button id="b1" onclick="abc()">true/false</button>
+        <script>
+            var x=document.getElementById("d1");
+
+            var ar=["true","false"];
+            var b=0;
+            function abc(){
+                if(b==ar.length-1){
+                    b=0;
+                    x.innerHTML=ar[b]
+                }else{
+                    b=b+1;
+                    x.innerHTML=ar[b]
+                }
+            }
+        </script>
+    </body>
+</html>

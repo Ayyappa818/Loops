@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <div id="d1" onclick="abc()" style="width: 200px;height: 100px;border: 2px solid;"></div>
+        <script>
+            var a=document.getElementById('d1');
+            var ar=["red","green","blue","pink","violet","white","gray","black","yellow"];
+            var b=0;
+            a.style.backgroundColor='red'
+            function abc(){
+                if(b==ar.length-1){
+                    b=0;
+                    a.style.backgroundColor=ar[b];
+                }else{
+                    b=b+1;
+                    a.style.backgroundColor=ar[b];
+                }
+            }
+        </script>
+    </body>
+</html>

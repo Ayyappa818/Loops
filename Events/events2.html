@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body>
+        <h1 id="h"></h1>
+        <button id="b1" onclick="abc()">green</button>
+        <script>
+            var a=document.getElementById('h');
+            a.innerHTML="Change button background color onclick"
+
+            var x=document.getElementById("b1");
+            x.style.backgroundColor="green";
+
+            function abc(){
+                if(x.style.backgroundColor==="green"){
+                    x.style.color='white';
+                    x.innerHTML="red";
+                    x.style.backgroundColor="red";
+                }
+                else{
+                    x.style.color='white';
+                    x.innerHTML="green";
+                    x.style.backgroundColor="green";
+                }
+            }
+
+        </script>
+    </body>
+</html>

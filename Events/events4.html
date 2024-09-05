@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <button id="b1" onclick="abc()"></button>
+        <h6 id="h">false</h6>
+        <script>
+            var x=document.getElementById("b1");
+            x.style.backgroundColor="orange";
+            x.innerHTML="toggle";
+            var y=document.getElementById("h")
+            var ar=["false","true"];
+            var a=0;
+            
+            function abc(){
+                if(a==ar.length-1){
+                    a=0;
+                    y.innerHTML=ar[a];
+                }else{
+                    a=a+1;
+                    y.innerHTML=ar[a]
+                }
+            }
+        </script>
+    </body>
+</html>
