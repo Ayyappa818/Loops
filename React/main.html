@@ -1,6 +1,97 @@
 <html>
-    <head></head>
-    <body>
-        <h1></h1>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body> 
+        <div  id="d1"></div>
+        <script type="text/babel">
+            var Table=(()=>{
+                var [people,setPeople]=React.useState([
+                    {
+                        "id":1,
+                        "name":"Ayyappa",
+                        "age":23,
+                        "gender":"male"
+                    },
+                    {
+                        "id":2,
+                        "name":"Anji",
+                        "age":20,
+                        "gender":"male"
+                    },
+                    {
+                        "id":3,
+                        "name":"vikas",
+                        "age":24,
+                        "gender":"male"
+                    },
+                    {
+                        "id":4,
+                        "name":"Meghana",
+                        "age":18,
+                        "gender":"female"
+                    },
+                    {
+                        "id":5,
+                        "name":"Jaya",
+                        "age":16,
+                        "gender":"female"
+                    },
+                    {
+                        "id":6,
+                        "name":"Tarun",
+                        "age":24,
+                        "gender":"male"
+                    },
+                    {
+                        "id":7,
+                        "name":"Syam",
+                        "age":21,
+                        "gender":"male"
+                    },
+                    {
+                        "id":8,
+                        "name":"Siva",
+                        "age":21,
+                        "gender":"male"
+                    },
+                    {
+                        "id":9,
+                        "name":"Sankar",
+                        "age":23,
+                        "gender":"male"
+                    },
+                    {
+                        "id":10,
+                        "name":"Sunanda",
+                        "age":23,
+                        "gender":"female"
+                    },
+                ])
+                
+
+                return <table border="2px solid blue">
+                    <thead>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                        <th>gender</th>
+                        </thead>
+                    {
+                        people.map((a)=>{
+                            return <tr>
+                                <td>{a.id}</td>
+                                <td>{a.name}</td>
+                                <td>{a.age}</td>
+                                <td>{a.gender}</td>
+                                </tr>
+                        })
+                    }
+                    </table>
+            })
+            ReactDOM.render(<Table/>,document.getElementById("d1"))
+        </script>
     </body>
 </html>
