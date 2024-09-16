@@ -34,6 +34,10 @@
                 m.splice(ind,1)
                 setTodo([...m])
             }
+            var tref=React.useRef();
+            function redit(){
+                tref
+            }
             var [todo,setTodo]=React.useState([
                 {
                     title:"Wake up early morning 5:00Am",
@@ -61,6 +65,7 @@
                 {
                     todo.map((tl,ind)=>{
                         return <li style={tl.status?{textDecorationLine:"line-through",color:"blue"}:{}}>{tl.title}
+                            <button onClick={()=>{redit()}}>Redit</button>
                             <i style={(tl.status?{color:"red"}:{color:"green"})} onClick={()=>{Edit(ind)}} class={tl.status?" fs-1 bi bi-envelope-open":" fs-1 bi bi-envelope"}></i>
                             {tl.status&&<i style={(tl.status?{color:"red"}:{color:"gray"})} onClick={()=>{del(ind)}}  class=" fs-3 bi bi-trash3"></i>}
                             </li>

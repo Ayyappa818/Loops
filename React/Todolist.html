@@ -45,7 +45,7 @@
                 <button class="btn btn-warning" onClick={()=>{Addtodo()}}>Add todo</button>
                 {
                     todo.map((tl,ind)=>{
-                        return <li style={(tl.status==false)?{textDecorationLine:"line-through",color:"blue"}:{}}>{tl.title}
+                        return <li style={(tl.status)?{textDecorationLine:"line-through",color:"blue"}:{}}>{tl.title}
                             <button class={(tl.status?"btn btn-danger":"btn btn-success")} onClick={()=>{Edit(ind)}}>{tl.status?'done':"undo"}</button>
                             </li>
                     })

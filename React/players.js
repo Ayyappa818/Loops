@@ -8,25 +8,25 @@ var players = [
     {
       "fullname": "Pardeep Narwal",
       "image": "https://www.sportsadda.com/static-assets/waf-images/4e/f6/a1/16-9/bCFmyZm0eh.jpg?v=1.6&w=1024",
-      "rating": 3.8,
+      "rating": "5 Star raider",
       "review": "Good product, but could be better."
     },
     {
       "fullname": "Ajay thakur",
       "image": "https://staticg.sportskeeda.com/editor/2018/10/1902c-15388255586699-500.jpg",
-      "rating": 5.0,
+      "rating": "5 Sart raider",
       "review": "Absolutely love this product!"
     },
     {
       "fullname": "Manjeet chhillar",
       "image": "https://pbs.twimg.com/media/CNLIsuUUAAAj69T.png",
-      "rating": 2.5,
+      "rating": "4 Star raider",
       "review": "Not satisfied with the product."
     },
     {
       "fullname": "Deepak hooda",
       "image": "https://s3.ap-south-1.amazonaws.com/assets-pkl.sportz.io/waf-images/5b/55/3b/16-9/4KyEjpgNLN.jpg",
-      "rating": 4.0,
+      "rating": "4 star raider",
       "review": "Decent product, could be improved."
     },
     {
