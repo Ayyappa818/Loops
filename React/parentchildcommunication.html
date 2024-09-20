@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function abc(){
+                alert("Welcome to Edupoly")
+            }
+            function Grandchild(){
+                return (<div class="border border-2 border-bg-secondary m-2 p-2">
+                    <h1>grandchild component:  {}</h1>
+                    </div>)
+            }
+            function Child(props){
+                return (<div class="border border-2 border-primary m-2 p-2">
+                    <h1>child component:  {props.a}</h1>
+                    <button onClick={props.func}>button</button>
+                    <Grandchild></Grandchild>
+                    </div>)
+            }
+            function Parent(){
+                var[prnt,setPrnt]=React.useState(873);
+                return (<div class="border border-2 border-warning m-2 p-2">
+                    <h1>parent component: {prnt}</h1>
+                    <button onClick={()=>{abc()}}>button</button>
+                    <Child a={prnt} func={abc}></Child>
+                    </div>)
+            }
+            ReactDOM.render(<Parent/>,document.getElementById("root"))
+        </script>
+    </body>
+</html>

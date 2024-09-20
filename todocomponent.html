@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Todolist(){
+                var [todo,setTodo]=React.useState(["ayyappa","anji","vikas","tarun","sankar","siva","thota"]);
+                return <div>
+                    <input type="text"/>
+                    <button onClick={()=>{addtodo()}}>Add todo</button>
+                    {
+                        todo.map((a,i)=>{
+                            return <Tdlist a={a}></Tdlist>
+                        })
+                    }
+                    </div>
+            }
+            function Tdlist(props){
+                return <li>
+                    {props.a}
+                    <button onClick={()=>{Done()}}>Done</button>
+                    <button onClick={()=>{Delete()}}>Delete</button> 
+                    </li>
+            }
+            ReactDOM.render(<Todolist/>,document.getElementById("root"));
+        </script>
+    </body>
+</html>

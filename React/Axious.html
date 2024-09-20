@@ -1,0 +1,33 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="dd"></div>
+        <script>
+            fetch("https://restcountries.com/v3/all").then((res)=>res.json()).then((data)=>{
+                // console.log(data)
+                    data.forEach((a) => {
+                        console.log(a)
+                        var x=document.createElement("ul");
+                        x.style.border="2px solid gray"
+                        var y=document.createElement("li");
+                        y.style.width="500px"
+                        y.innerHTML="Name :"+a.name.common;
+                        x.appendChild(y)
+                        var z=document.createElement("img")
+                        z.src=a.flags[0];
+                        z.style.width="200px"
+                        x.appendChild(z)
+                        var b=document.createElement("h2");
+                        b.innerHTML="continent  :"+a.continents[0];
+                        x.appendChild(b)
+                        var c=document.createElement("h3");
+                        c.innerHTML="Population  :"+a.population;
+                        x.appendChild(c)
+                        document.getElementById("dd").appendChild(x)
+                    })
+            })
+        </script>
+    </body>
+</html>

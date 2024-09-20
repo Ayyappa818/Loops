@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <style>
+      
+    </style>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            function Cart(){
+            var [pizzas,setPzzas]=React.useState([
+  {
+    "name": "Spicy Hawaiian Delight",
+    "price": 12.99,
+    "image": "https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg"
+  },
+  {
+    "name": "Mushroom Madness",
+    "price": 10.99,
+    "image": "https://www.thespruceeats.com/thmb/lmDJraajDXMJ9izsIfzNt79GrSs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Pizzasupremehoriz-1ccfa0b1732b4c128427d19ae02a422b.jpg"
+  },
+  {
+    "name": "BBQ Chicken Supreme",
+    "price": 14.49,
+    "image": "https://www.moulinex-me.com/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGltYWdlL2pwZWd8YUdObEwyaG1aQzh4TlRrMk9EWXlOVGM0TmpreE1DNXFjR2N8MmYwYzQ4YTg0MTgzNmVjYTZkMWZkZWZmMDdlMWFlMjRhOGIxMTQ2MTZkNDk4ZDU3ZjlkNDk2MzMzNDA5OWY3OA"
+  },
+  {
+    "name": "Veggie Paradise",
+    "price": 11.49,
+    "image": "https://5.imimg.com/data5/HS/NQ/MY-17758356/classic-pizzas-non-veg-trouble-014-500x500.png"
+  },
+  {
+    "name": "Pepperoni Overload",
+    "price": 13.99,
+    "image": "https://www.dominos.co.in/theme2/front/images/menu-images/my-nonveg.webp"
+  },
+  {
+    "name": "Four Cheese Dream",
+    "price": 11.99,
+    "image": "https://images.101cookbooks.com/PIZZA-DOUGH-RECIPE-h.jpg?w=1200&auto=compress&auto=format"
+  },
+  {
+    "name": "Meat Lovers' Extravaganza",
+    "price": 15.99,
+    "image": "https://www.ilovelindsay.com/assets/components/phpthumbof/cache/pizza-with-black-olives-and-pepperoni-small.f82724c758f5a7e1142cf0568b85d580.jpg"
+  },
+  {
+    "name": "Buffalo Cauliflower Bliss",
+    "price": 12.49,
+    "image": "https://imgmedia.lbb.in/media/2023/10/65409fd67b6db1676cecb2ca_1698734038258.jpg"
+  },
+  {
+    "name": "Mediterranean Delight",
+    "price": 13.49,
+    "image": "https://www.ilovelindsay.com/assets/components/phpthumbof/cache/pizza-with-black-olives-and-pepperoni-small.f82724c758f5a7e1142cf0568b85d580.jpg"
+  },
+  {
+    "name": "Garlic Chicken Alfredo",
+    "price": 14.99,
+    "image": "https://www.ilovelindsay.com/assets/components/phpthumbof/cache/pizza-with-black-olives-and-pepperoni-small.f82724c758f5a7e1142cf0568b85d580.jpg"
+  },
+  {
+    "name": "Mushroom Madness",
+    "price": 10.99,
+    "image": "https://www.thespruceeats.com/thmb/lmDJraajDXMJ9izsIfzNt79GrSs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Pizzasupremehoriz-1ccfa0b1732b4c128427d19ae02a422b.jpg"
+  },
+  {
+    "name": "BBQ Chicken Supreme",
+    "price": 14.49,
+    "image": "https://www.moulinex-me.com/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGltYWdlL2pwZWd8YUdObEwyaG1aQzh4TlRrMk9EWXlOVGM0TmpreE1DNXFjR2N8MmYwYzQ4YTg0MTgzNmVjYTZkMWZkZWZmMDdlMWFlMjRhOGIxMTQ2MTZkNDk4ZDU3ZjlkNDk2MzMzNDA5OWY3OA"
+  },
+  {
+    "name": "Veggie Paradise",
+    "price": 11.49,
+    "image": "https://5.imimg.com/data5/HS/NQ/MY-17758356/classic-pizzas-non-veg-trouble-014-500x500.png"
+  },
+  {
+    "name": "Pepperoni Overload",
+    "price": 13.99,
+    "image": "https://www.dominos.co.in/theme2/front/images/menu-images/my-nonveg.webp"
+  }
+]
+);
+var [cart,setCart]=React.useState([]);
+
+
+function addcart(pizza) {
+  console.log(pizza);
+  setCart([...cart, { name: pizza.name, price: pizza.price ,image:pizza.image}]);
+}
+var [tb,setTb]=React.useState(0);
+React.useEffect(()=>{
+  setTb(cart.reduce((a,b)=>{
+    return a+b.price
+  },0))
+},[cart])
+function del(index){
+var temp=[...cart]
+temp.splice(index,1)
+setCart([...temp])
+}
+
+    
+    return(
+                <div style={{ display: "flex" }}>
+                    <div>
+                      <Carts pizzas={pizzas} addcart={addcart} />
+                     
+                    </div>
+                    <div style={{ border:"2px solid green",width:"400px"}}>
+                        <center><h1 style={{border:"2px solid",padding:"10px",margin:"10px",borderRadius:"10px",color:'white',backgroundColor:"blue" }}>Cart</h1></center>
+                        {cart.map((c, index) => (
+                            <ul key={index} style={{ border: "2px solid red",marginLeft:'50px',padding:"10px",listStyle:"none",borderRadius:"10px" ,width:"300px",textAlign:"center"}}>
+                              <li><img src={c.image} style={{width:"70px"}}/></li>
+                                <li><b>{c.name}</b></li>
+                                <li><b>{c.price}</b></li>
+                                <div><button className="btn btn-secondary" onClick={()=>{del(index)}}>Remove</button></div>
+                            </ul>
+                          ))}
+                          <h1 style={{margin:"10px",padding:"10px",borderRadius:"10px",backgroundColor:"orange",color:"black"}}>Total:{tb}</h1>
+                    </div>
+                </div>
+            ); 
+              }
+  function Carts(props){
+    
+    return <div style={{border:'2px solid red',width:"800px",margin:"20px",display:"flex",flexWrap:"wrap"}} >
+      {
+        props.pizzas.map((pizza ,i)=>{ 
+          return <div>
+                            <ul style={{listStyle:"none",border:"2px solid green",padding:"20px",margin:"20px",borderRadius:"15px 50px" }}>
+                            <li><img src={pizza.image} width="200px"/></li>
+                                 <li><b>{pizza.name}</b></li> 
+                                  <li><h5>Rs.{pizza.price}</h5></li>
+                                  <li><button style={{width:"210px",borderRadius:"15px 50px",backgroundColor:"green",color:"white",margin:'10px',border:"none"}} onClick={()=>{props.addcart(pizza)}}><b>Add to cart  Rs.{pizza.price}</b></button></li>
+                               </ul>
+                               
+                               </div>
+                    })
+                }
+             </div> 
+            };     
+          
+ReactDOM.render(<Cart/>,document.getElementById("d1"));
+</script>
+ </body>
+</html>
