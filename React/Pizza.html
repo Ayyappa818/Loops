@@ -220,49 +220,49 @@
                         "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/tandoori-mushroom-&-sweet-corn-pan-personal.49a1287d1cece07781c106e552979fa2.1.jpg?width=550",
                     },
                     {
-        "id": 23,
-        "name": "Schezwan Corn & Capsicum",
-        "veg": true,
-        "price": 6,
-        "description": "Pizza topped with Spicy Schezwan sauce, sweet corn & crunchy capsicum and cheesy dressing.",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/schezwan-corn-&-capsicum-pan-personal.23c83846270110a536b40ec74529e907.1.jpg?width=550",
+                        "id": 23,
+                        "name": "Schezwan Corn & Capsicum",
+                        "veg": true,
+                        "price": 6,
+                        "description": "Pizza topped with Spicy Schezwan sauce, sweet corn & crunchy capsicum and cheesy dressing.",
+                        "quantity": 1,
+                        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/schezwan-corn-&-capsicum-pan-personal.23c83846270110a536b40ec74529e907.1.jpg?width=550",
                     },
                     {
-        "id": 24,
-        "name": "Only Cheesy",
-        "veg": true,
-        "price": 40,
-        "description": "Pizza topped with cheesy dressing and mozzarella cheese for that extraaa cheesy flavor.",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/only-cheesy-pan-personal.951dbe6ee07dafc48e04fe9a1bbe4ddb.1.jpg?width=550",
+                        "id": 24,
+                        "name": "Only Cheesy",
+                        "veg": true,
+                        "price": 40,
+                        "description": "Pizza topped with cheesy dressing and mozzarella cheese for that extraaa cheesy flavor.",
+                        "quantity": 1,
+                        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/only-cheesy-pan-personal.951dbe6ee07dafc48e04fe9a1bbe4ddb.1.jpg?width=550",
                    },
                    {
-        "id": 25,
-        "name": "Classic Sausage",
-        "veg": false,
-        "price": 8,
-        "description": "Pizza topped with our Classic Pan sauce, flavorful chicken sausage and cheesy dressing.",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/classic-sausage-pan-personal.fbbfbce57f62a8d8b366db5f66798704.1.jpg?width=550",
+                        "id": 25,
+                        "name": "Classic Sausage",
+                        "veg": false,
+                        "price": 8,
+                        "description": "Pizza topped with our Classic Pan sauce, flavorful chicken sausage and cheesy dressing.",
+                        "quantity": 1,
+                        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/classic-sausage-pan-personal.fbbfbce57f62a8d8b366db5f66798704.1.jpg?width=550",
                     },
                     {
-        "id": 26,
-        "name": "Classic Paneer Capsicum & Onion",
-        "veg": true,
-        "price": 6,
-        "description": "Pizza topped with our Classic Pan sauce, flavorful paneer, crunchy onion & capsicum and cheesy dressing.",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/classic-paneer-capsicum-&-onion-pan-personal.ae2c5f3e3e5881af1f31e65cb9526289.1.jpg?width=550",
+                        "id": 26,
+                        "name": "Classic Paneer Capsicum & Onion",
+                        "veg": true,
+                        "price": 6,
+                        "description": "Pizza topped with our Classic Pan sauce, flavorful paneer, crunchy onion & capsicum and cheesy dressing.",
+                        "quantity": 1,
+                        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/classic-paneer-capsicum-&-onion-pan-personal.ae2c5f3e3e5881af1f31e65cb9526289.1.jpg?width=550",
                     },
                     {
-        "id": 27,
-        "name": "Italian Pepperoni & Onion",
-        "veg": false,
-        "price": 5,
-        "description": "Pizza topped with our Chef's Special Italian sauce, crunchy onion, chicken pepperoni and cheesy dressing.",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/italian-pepperoni-&-onion-pan-personal.b6c0c99c9241f2fce14493773f625dd3.1.jpg?width=550",
+                        "id": 27,
+                        "name": "Italian Pepperoni & Onion",
+                        "veg": false,
+                        "price": 5,
+                        "description": "Pizza topped with our Chef's Special Italian sauce, crunchy onion, chicken pepperoni and cheesy dressing.",
+                        "quantity": 1,
+                        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/italian-pepperoni-&-onion-pan-personal.b6c0c99c9241f2fce14493773f625dd3.1.jpg?width=550",
                     },
                     {
                         "id": 28,
@@ -296,7 +296,7 @@
                 var [ac,setAc]=React.useState([]);
                 function Addcart(a,i){
                     console.log(a.name,a.price)
-                    var x=[...ac,{name:a.name,price:a.price}]
+                    var x=[...ac,{name:a.name,price:a.price,img:a.img}]
                     setAc([...x])
                 }
                 var [tot,setTot]=React.useState(0);
@@ -315,8 +315,10 @@
                         <h1>Add Tocart</h1>
                         {
                             ac.map((c,i)=>{
+                                console.log(c.img)
+                                console.log(c.price)
                                 return <ul>
-                                    <li><img src={c.img} alt=""/></li>
+                                    <li><img src={c.img} alt="" width="100px"/></li>
                                     <li><h5>{c.name}</h5></li>
                                     <li>{c.price}</li>
                                     </ul>

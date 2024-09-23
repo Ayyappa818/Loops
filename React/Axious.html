@@ -25,6 +25,12 @@
                         var c=document.createElement("h3");
                         c.innerHTML="Population  :"+a.population;
                         x.appendChild(c)
+                        var d=document.createElement("h4");
+                        d.innerHTML="TimeZones :"+a.timezones[0];
+                        x.appendChild(d)
+                        var e=document.createElement("b");
+                        e.innerHTML="Subregion :"+a.subregion;
+                        x.appendChild(e)
                         document.getElementById("dd").appendChild(x)
                     })
             })

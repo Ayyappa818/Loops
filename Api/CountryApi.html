@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Countries() {
+                var [allcountry,setAllcountry]=React.useState([]);
+                React.useEffect(()=>{
+                    fetch("https://restcountries.com/v3/all").then((res)=>res.json().then((data)=>{
+                    console.log(data)
+                    setAllcountry([...data])
+                }))
+                },[])
+                function Srt(key){
+                    console.log(key)
+                    allcountry.sort((x,y)=>{
+                        if(x[key]<y[key]){
+                            return -1
+                        }
+                        else{
+                            return 1
+                        }
+
+                    })
+                     setAllcountry([...allcountry])
+                }
+                function Sht(key){
+                    console.log(key)
+                    allcountry.sort((x,y)=>{
+                        if(x.name.common<y.name.common){
+                            return -1
+                        }
+                        else{
+                            return 1
+                        }
+
+                    })
+                     setAllcountry([...allcountry])
+                }
+                return <div>
+                    <div class="bg-primary sticky-top d-flex">
+                        <div><i class=" fs-1 bi bi-globe-central-south-asia"></i></div>
+                        <div><center><h1 class="border border-5 border-primary ">Country's</h1></center></div>
+                        </div>
+                    <div>
+                        <div  class="row row-cols-1 row-cols-md-5 g-4">
+                    {
+                        allcountry.map((c,i)=>{
+                            return <div class="col">
+    <div class="card h-100">
+      <img src={c.flags[0]} class="card-img-top" alt=""/>
+      <div class="card-body">
+        <h5 class="card-title">Country detail's</h5>
+        <p class="card-text"><b>Country Name :</b>{c.name.common}</p>
+        <p class="card-text"><b>Capital :</b>{c.capital?c.capital:"none"}</p>
+        <p class="card-text"><b>Continent :</b>{c.continents[0]}</p>
+        <p class="card-text"><b>Population :</b>{c.population}</p>
+        <p class="card-text"><b>imezones :</b>{c.timezones[0]}</p>
+        <p class="card-text"><b>Subregion :</b>{c.subregion}</p>
+      </div>
+    </div>
+  </div>
+                        })
+                    }
+                    </div>
+                        </div>
+                    </div>
+            }
+            ReactDOM.render(<Countries/>,document.getElementById("root"))
+        </script>
+    </body>
+</html>

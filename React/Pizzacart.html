@@ -293,29 +293,45 @@
                     }
 
                 ])
-                var [tran,setTran]=React.useState([]);
-                function Addcart(b,i){
-                    console.log(b)
-                    // setTran([...tran{b.name,b.price}])
+                var [cart,setCart]=React.useState([]);
+                var [tot,setTot]=React.useState(0);
+                React.useEffect(()=>{
+                    setTot(cart.reduce((p,q)=>{
+                        return p+q.price
+                    },0))
+                },[cart])
+                function Addcart(y,i){
+                    var ac=[...cart,{name:y.name,price:y.price,img:y.img}];
+                    setCart([...ac])
                 }
-                return <div class="d-flex border border-4 w-100%">
-                    <div class="d-flex flex-wrap w-50%"><Foodlist a={b} i={i} Addcart={Addcart} ></Foodlist></div>
-                     <div class="w-50% border border-2"><h1>Ayyappa </h1></div>
+                return <div class="d-flex flex-wrap border border-2 border-secondary">
+                    <div class="w-75 border border-2 border-primary d-flex flex-wrap align-content-start">
+                        {
+                            pizza.map((x,i)=>{
+                                return <Foodlist y={x} i={i} func={Addcart} cart={cart}></Foodlist>
+                            })
+                        }
+                    </div>
+                    <div class="w-25 border border-2 border-success">
+                        {
+                            cart.map((c)=>{
+                                return <li>
+                                    <h6>{c.name}</h6>
+                                    <b>Price :{c.price}</b>
+                                    <img src={c.img} alt="" width="100px" />
+                                    </li>
+                            })
+                        }
+                        <h5>Total :{tot}</h5>
+                        </div>
                     </div>
             }
             function Foodlist(props){
-               return ( 
-                props.pizza.map((a,i)=>{
-                    return <ul style={{listStyle:"none"}} class="p-0">
-                    <li class="border border-2 p-2 m-2 d-flex  flex-column">
-                    <img src={a.img} alt="" width="200px" />
-                    <h5>{a.name}</h5>
-                    <h5>price: {a.price}</h5>
-                    <button class="btn btn-success" onClick={()=>{props.Addcart(a,i)}}>Add </button>
-                    </li>
-                    </ul>
-                })
-               )
+                            return <div class="border border-2 border-info">
+                                <img src={props.y.img} alt="" width="200px"/>
+                                <h5>{props.y.name}</h5> 
+                                <button class="btn btn-warning" onClick={()=>{props.func(props.y,props.i)}}>ADD cart  <b>Rs:{props.y.price}</b></button>
+                                </div>
             }
             ReactDOM.render(<Fitem/>,document.getElementById("root"))
         </script>
