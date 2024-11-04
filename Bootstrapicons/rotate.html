@@ -7,26 +7,24 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <style>
-            i{
-                position: absolute;
-                left: 0px;
-            }
         </style>
     </head>
     <body>
         <div id="root"></div>
         <script type="text/babel">
-            function Zoom(){
-                var [inout,setInout]=React.useState(true);
+            function Rotate(){
+                var [rot,setRot]=React.useState(true);
                 function abc(){
-                    setInout(!inout);
+                    setRot(!rot);
                 }
                 return <div>
-                    <img class="position-relative"  style={inout?{width:"50%"}:{width:"100%"}} src="https://i.pinimg.com/736x/3e/38/f4/3e38f48be14269a8ecbe6ce5ec04d8e2.jpg" alt=""/>
-                    <i class={inout?"fs-2 bi bi-aspect-ratio":"fs-2 bi bi-aspect-ratio-fill"} onClick={()=>{abc()}}></i>
+                    <div>
+                    <i class={rot?"fs-2 bi bi-arrow-repeat":"fs-2 bi bi-arrow-repeat"} onClick={()=>{abc()}}></i>
+                        </div>
+                    <img  style={rot?{TransformStream:"Rotate"}:{TransformStream:"Rotate"}} src="https://i.pinimg.com/474x/54/c2/1a/54c21a54b305f13905bc9f027e468a38.jpg"  width="500px"/>
                     </div>
             }
-            ReactDOM.render(<Zoom/>,document.getElementById("root"))
+            ReactDOM.render(<Rotate/>,document.getElementById("root"))
         </script>
     </body>
 </html>
