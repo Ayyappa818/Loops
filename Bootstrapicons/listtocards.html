@@ -67,10 +67,10 @@
                 }
                 return <div>
 
-                    <div class="sticky-top bg-primary d-flex ">
+                    <div class="sticky-top bg-primary d-flex" style={{height:"100px"}}>
                         <div><i class=" fs-1 bi bi-globe-central-south-asia"></i></div>
                         <div><h1 class="border border-5 border-primary ">Country's</h1></div>
-                        <div class="position-absolute bottom-50 end-0"><input id="in" onBlur={(e)=>{search(e.target.value)}} type="text"/><i class="fs-3 bi bi-search position-absolute bottom-0 end-0"></i></div>
+                        <div class="position-absolute bottom-50 end-0"><input id="in" class="form-control" onBlur={(e)=>{search(e.target.value)}} type="text" placeholder="Countryname" aria-label="Countryname" aria-describedby="addon-wrapping"/><i class="fs-3 bi bi-search position-absolute bottom-0 end-0"></i></div>
                         <br/>
                         <div class="position-absolute bottom-0 end-0">
                         <i class={litoca?"fs-2 bi bi-grid-3x2-gap-fill":"fs-2 bi bi-list"} onClick={()=>{abc()}}></i>
@@ -82,15 +82,14 @@
                             <i  onClick={()=>{Asc()}} class="fs-1 bi bi-sort-alpha-up text-warning">Ass</i>
                             <i onClick={()=>{Dse()}} class="fs-1 bi bi-sort-alpha-up-alt text-info">Des</i>
                             </div>
-
-
-                    <div class={litoca?"row row-cols-1 row-cols-md-5 g-4":"card border-primary mb-3 w-75"}>
+                            {
+                                litoca?<div class="row row-cols-1 row-cols-md-5 g-4 p-2 m-2">
                         {
                             allcountry?.map((c,i)=>{
                                 return <div id="hh" class="col shadow p-2 m-2 rounded">
                                     <div class="card h-100 bg-secondary">
-                                        <img src={c.flags[0]} class="card-img-top" alt="..."/>
-                                        <div class="card-body">
+                                        <img src={c.flags[0]} class="card-img" alt="..." width="100px"/>
+                                        <div class={litoca?"card-body":"flex-grow-1 ms-3"}>
                                             <h5 class="card-title"><b>Country Name :</b>{c.name.common}</h5>
                                             <h5 class="card-title"><b>Capital :</b>{c.capital?c.capital:"none"}</h5>
                                             <h5 class="card-title"><b>Continent :</b>{c.continents[0]}</h5>
@@ -101,6 +100,28 @@
                             })
                         }
                     </div>
+                    :
+                    <div class="">
+  {
+    allcountry?.map((a,i)=>{
+        return <div class="d-flex align-items-center border border-secondary rounded shadow p-2 m-2">
+            <div class="flex-shrink-0">
+    <img src={a.flags[0]} width="100px"/>
+  </div>
+  <div class="flex-grow-1 ms-3 bg-secondary rounded">
+    <h5 class="card-title"><b>Country Name :</b>{a.name.common}</h5>
+    <h5 class="card-title"><b>Capital :</b>{a.capital?a.capital:"none"}</h5>
+    <h5 class="card-title"><b>Continent :</b>{a.continents[0]}</h5>
+    <h5 class="card-title"><b>Population :</b>{a.population}</h5>
+  </div>
+            </div>
+    })
+  }
+</div>
+                            }
+
+
+                    
 
                         </div>
                     </div>
