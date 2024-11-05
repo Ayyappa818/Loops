@@ -10,6 +10,22 @@
             #hh:hover{
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.42), 0 6px 20px 0 rgba(0, 0, 0, 0.42);
             }
+            #l1 i{
+            border: 2px solid black;
+            display: inline;
+            padding: 10px;
+            font-size: 30px;
+            border-radius: 50%;
+            background-color:rgb(0, 140, 255) ;
+            color:greenyellow;
+           position: absolute;
+           top: 12px;
+           left: 20px; 
+          }
+          #l1 i:hover{
+            transform: rotateY(180deg);
+            transition: 6s;
+          }
         </style>
     </head>
     <body>
@@ -68,8 +84,8 @@
                 return <div>
 
                     <div class="sticky-top bg-primary d-flex" style={{height:"100px"}}>
-                        <div><i class=" fs-1 bi bi-globe-central-south-asia"></i></div>
-                        <div><h1 class="border border-5 border-primary ">Country's</h1></div>
+                            <div id="l1" class="position-relative"><i class=" fs-1 bi bi-globe-central-south-asia position-absolute top-0 start-0"></i></div>
+                            <div class="mx-5" ><h1 class="border border-5 border-primary mx-5">Country's</h1></div>
                         <div class="position-absolute bottom-50 end-0"><input id="in" class="form-control" onBlur={(e)=>{search(e.target.value)}} type="text" placeholder="Countryname" aria-label="Countryname" aria-describedby="addon-wrapping"/><i class="fs-3 bi bi-search position-absolute bottom-0 end-0"></i></div>
                         <br/>
                         <div class="position-absolute bottom-0 end-0">
