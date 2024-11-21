@@ -7,7 +7,27 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <style>
-            
+            i{
+              position: absolute;
+              top: 0px;
+              left: 15px;
+              color:darkgrey ;
+            }
+            .b1{
+              background-image: url("https://i.pinimg.com/736x/79/21/0c/79210c1a0c5a87b4f40e0c53f656fa2b.jpg");
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            .b2{
+              background-image: url("https://i.pinimg.com/736x/59/17/b3/5917b3a1286508193a4f751585e47466.jpg");
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            .nv{
+              background-image: url("https://i.pinimg.com/474x/5b/99/75/5b9975772886a154f4882a30244ad5bc.jpg");
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
         </style>
     </head>
     <body>
@@ -19,56 +39,82 @@
                     setLitoca(!litoca);
                 }
                 return <div>
-                    <div class="position-relative h-25">
-                    <i class={litoca?"fs-1 bi bi-grid-3x2-gap-fill position-absolute top-0 end-0":"fs-1 bi bi-card-text position-absolute top-0 end-0"} onClick={()=>{abc()}}></i>
+                  <header class="p-3 text-bg-dark nv">
+                    <div class="container">
+                      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"></svg>
+                        </a>
+                
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                          <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+                          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                        </ul>
+                
+                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search"/>
+                        </form>
+                
+                        <div class="text-end">
+                          <button type="button" class="btn me-2 b1">Login</button>
+                          <button type="button" class="btn b2">Sign-up</button>
+                        </div>
+                        <div class="position-relative">
+                          <i class={litoca?"fs-2 bi bi-grid-3x2-gap-fill":"fs-2 bi bi-card-text"} onClick={()=>{abc()}}></i>
+                        </div>
+                      </div>
                     </div>
+                  </header>
                     <div class={litoca?"row row-cols-1 row-cols-md-4 g-4 p-2 m-2":"card border-primary mb-3 p-2 m-2"}>
-  <div class="col rounded shadow border border-secondary p-0 m-2">
-    <div class="card h-100">
-      <img src="https://i.pinimg.com/474x/a1/a1/00/a1a1005382e8112f49b6e876bc56d423.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
-      <div class="card-body">
-        <h5 class="card-title">Naruto</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col rounded shadow border border-secondary p-0 m-2">
-    <div class="card h-100">
-      <img src="https://i.pinimg.com/736x/79/b7/cf/79b7cf4b61612c89c2a2e77bafbbde7e.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
-      <div class="card-body">
-        <h5 class="card-title">Demon Slayer</h5>
-        <p class="card-text">This is a short card.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col rounded shadow border border-secondary p-0 m-2">
-    <div class="card h-100">
-      <img src="https://i.pinimg.com/736x/24/cf/98/24cf98fc2fd5301a6438d4074c3e236a.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
-      <div class="card-body">
-        <h5 class="card-title">Kaiju No 8</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col rounded shadow border border-secondary p-0 m-2">
-    <div class="card h-100">
-      <img src="https://i.pinimg.com/736x/13/e5/40/13e54017798e03332c057cbab1ff776a.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
-      <div class="card-body">
-        <h5 class="card-title">SoloLeveling</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col rounded shadow border border-secondary p-0 m-2">
-    <div class="card h-100">
-      <img src="https://i.pinimg.com/474x/d6/1d/97/d61d9799dae3feb2b1d2b01026b65bf2.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
-      <div class="card-body">
-        <h5 class="card-title">One Piece</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-</div>
+                        <div class="col rounded shadow border border-secondary p-0 m-2">
+                          <div class="card h-100">
+                            <img src="https://i.pinimg.com/474x/a1/a1/00/a1a1005382e8112f49b6e876bc56d423.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
+                            <div class="card-body">
+                              <h5 class="card-title">Naruto</h5>
+                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col rounded shadow border border-secondary p-0 m-2">
+                          <div class="card h-100">
+                            <img src="https://i.pinimg.com/736x/79/b7/cf/79b7cf4b61612c89c2a2e77bafbbde7e.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
+                            <div class="card-body">
+                              <h5 class="card-title">Demon Slayer</h5>
+                              <p class="card-text">This is a short card.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col rounded shadow border border-secondary p-0 m-2">
+                          <div class="card h-100">
+                            <img src="https://i.pinimg.com/736x/24/cf/98/24cf98fc2fd5301a6438d4074c3e236a.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
+                            <div class="card-body">
+                              <h5 class="card-title">Kaiju No 8</h5>
+                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col rounded shadow border border-secondary p-0 m-2">
+                          <div class="card h-100">
+                            <img src="https://i.pinimg.com/736x/13/e5/40/13e54017798e03332c057cbab1ff776a.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
+                            <div class="card-body">
+                              <h5 class="card-title">SoloLeveling</h5>
+                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col rounded shadow border border-secondary p-0 m-2">
+                          <div class="card h-100">
+                            <img src="https://i.pinimg.com/474x/d6/1d/97/d61d9799dae3feb2b1d2b01026b65bf2.jpg" class={litoca?"card-img-top":"card"} width="100px"/>
+                            <div class="card-body">
+                              <h5 class="card-title">One Piece</h5>
+                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
             }
             ReactDOM.render(<Ltoc/>,document.getElementById("root"))
