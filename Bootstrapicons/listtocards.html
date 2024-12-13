@@ -118,22 +118,22 @@
                     </div>
                     :
                     <div class="">
-  {
-    allcountry?.map((a,i)=>{
-        return <div id="hh" class="d-flex align-items-center border border-secondary rounded p-2 m-2">
-            <div class="flex-shrink-0">
-    <img src={a.flags[0]} width="100px"/>
-  </div>
-  <div class="flex-grow-1 ms-3 bg-secondary rounded">
-    <h5 class="card-title"><b>Country Name :</b>{a.name.common}</h5>
-    <h5 class="card-title"><b>Capital :</b>{a.capital?a.capital:"none"}</h5>
-    <h5 class="card-title"><b>Continent :</b>{a.continents[0]}</h5>
-    <h5 class="card-title"><b>Population :</b>{a.population}</h5>
-  </div>
-            </div>
-    })
-  }
-</div>
+                      {
+                        allcountry?.map((a,i)=>{
+                            return <div id="hh" class="d-flex align-items-center border border-secondary rounded p-2 m-2">
+                                <div class="flex-shrink-0">
+                        <img src={a.flags[0]} width="100px"/>
+                      </div>
+                      <div class="flex-grow-1 ms-3 bg-secondary rounded">
+                        <h5 class="card-title"><b>Country Name :</b>{a.name.common}</h5>
+                        <h5 class="card-title"><b>Capital :</b>{a.capital?a.capital:"none"}</h5>
+                        <h5 class="card-title"><b>Continent :</b>{a.continents[0]}</h5>
+                        <h5 class="card-title"><b>Population :</b>{a.population}</h5>
+                      </div>
+                                </div>
+                        })
+                      }
+                    </div>
                             }
 
 
